@@ -167,7 +167,7 @@
         android:drawablePadding="10dp"
         android:drawableStart="@drawable/ic_business_grey_24dp"
         android:ems="10"
-        android:hint="@string/hint_company_name"
+        android:hint="Company Name"
         android:inputType="textEmailAddress"
         android:textColor="#099bea"
         android:textColorHint="#D3D3D3"
