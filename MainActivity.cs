@@ -3,19 +3,50 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using Android.Content;
+using System.Collections.Generic;
 
 namespace Project1
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        //Create a list to store Contact Objects in this class
+        private List<Contact> ContactData = new List<Contact>();
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            // assign buttons in this class to buttons in xml file
+            Button addNewContact = FindViewById<Button>(Resource.Id.addNewContact);
+
+            //click event for addNewContact
+            addNewContact.Click += (sender, e) =>
+            {
+                Intent intent = new Intent(this, typeof(Project1.CreateNewContact));
+                StartActivity(intent);
+
+            };
+
+            // create a list adaptor to show Contact objects in a list view
         }
+
+        // populate Contact objects programmatically
+        public void populateContact()
+        {
+            ContactData.Add(new Contact("John Smith", "89878", "example@email.com", "DGE Co.", 1));
+            ContactData.Add(new Contact("Blake Dawson", "78678", "example@email.com", "New Light Co.", 2));
+            ContactData.Add(new Contact("Danny Love", "3232323", "example@email.com", "BNG Entertainment", 1));
+        }
+
+
+
+
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
