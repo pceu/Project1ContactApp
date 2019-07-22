@@ -12,7 +12,7 @@ namespace Project1
     public class MainActivity : AppCompatActivity
     {
         //Create a list to store Contact Objects in this class
-        private List<Contact> ContactData = new List<Contact>();
+        public static List<Contact> ContactData = new List<Contact>();
         private ListView myListView;
         Button addNewContact;
 
@@ -28,7 +28,7 @@ namespace Project1
             addNewContact = FindViewById<Button>(Resource.Id.addNewContact);
 
             // create Contact object/s
-            populateContact();
+            if(ContactData.Count < 1) { populateContact(); }
 
             //click event for addNewContact
             addNewContact.Click += (sender, e) =>
@@ -41,6 +41,20 @@ namespace Project1
             // create a list adaptor to show Contact objects in a list view
             MyListViewAdapter myAdapter = new MyListViewAdapter(this, ContactData);
             myListView.Adapter = myAdapter;
+
+            // create onclick event for the listView
+            myListView.ItemClick += MyListView_ItemClick;
+        }
+
+        private void MyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var intent = new Intent(this, typeof(Project1.ContactDetailsPage));
+            intent.PutExtra("name", ContactData[e.Position].Name);
+            intent.PutExtra("phoneNum", ContactData[e.Position].PhoneNum);
+            intent.PutExtra("email", ContactData[e.Position].Email);
+            intent.PutExtra("company", ContactData[e.Position].Company);
+            intent.PutExtra("image", ContactData[e.Position].Image);
+            StartActivity(intent);
         }
 
         // populate Contact objects programmatically
@@ -50,10 +64,6 @@ namespace Project1
             ContactData.Add(new Contact("Blake Dawson", "78678", "example@email.com", "New Light Co.", 2));
             ContactData.Add(new Contact("Danny Love", "3232323", "example@email.com", "BNG Entertainment", 1));
         }
-
-
-
-
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
