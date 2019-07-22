@@ -31,26 +31,36 @@ namespace Project1
 
         public override long GetItemId(int position)
         {
-            throw new NotImplementedException();
+            return position;
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             View row = convertView;
 
-            if (row != null)
+            if (row == null)
             {
                 row = LayoutInflater.From(myContext).Inflate(Resource.Layout.contact_list, null, false);
             }
+
             ImageView image = row.FindViewById<ImageView>(Resource.Id.person_icon);
+            if(myItems[position].Image == 1)
+            {
+                int resImage = (int)typeof(Resource.Drawable).GetField("person1").GetValue(null);
+                image.SetImageResource(resImage);
+            } else
+            {
+                int resImage = (int)typeof(Resource.Drawable).GetField("person2").GetValue(null);
+                image.SetImageResource(resImage);
+            }
 
             TextView personName = row.FindViewById<TextView>(Resource.Id.personNameText);
-            personName.Text = myItems[position].getName();
+            personName.Text = myItems[position].Name;
 
             TextView personCompany = row.FindViewById<TextView>(Resource.Id.personCompanyText);
-            personCompany.Text = myItems[position].getCompany();
+            personCompany.Text = myItems[position].Company;
 
-            throw new NotImplementedException();
+            return row;
         }
     }
 }

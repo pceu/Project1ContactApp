@@ -13,6 +13,8 @@ namespace Project1
     {
         //Create a list to store Contact Objects in this class
         private List<Contact> ContactData = new List<Contact>();
+        private ListView myListView;
+        Button addNewContact;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -21,8 +23,12 @@ namespace Project1
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            // assign buttons in this class to buttons in xml file
-            Button addNewContact = FindViewById<Button>(Resource.Id.addNewContact);
+            // assign buttons and listView to elements in xml file 
+            myListView = FindViewById<ListView>(Resource.Id.contactsListView);
+            addNewContact = FindViewById<Button>(Resource.Id.addNewContact);
+
+            // create Contact object/s
+            populateContact();
 
             //click event for addNewContact
             addNewContact.Click += (sender, e) =>
@@ -33,6 +39,8 @@ namespace Project1
             };
 
             // create a list adaptor to show Contact objects in a list view
+            MyListViewAdapter myAdapter = new MyListViewAdapter(this, ContactData);
+            myListView.Adapter = myAdapter;
         }
 
         // populate Contact objects programmatically
