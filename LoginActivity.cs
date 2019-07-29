@@ -12,9 +12,13 @@ using Android.Widget;
 
 namespace Project1
 {
-    [Activity(Label = "LoginActivity")]
+    [Activity(Label = "LoginActivity", MainLauncher = true)]
     public class LoginActivity : Activity
     {
+        List<LoginDetails> loginDetails = new List<LoginDetails>();
+        Button loginButton;
+        EditText userNameInput;
+        EditText passwordInput;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -23,6 +27,38 @@ namespace Project1
             SetContentView(Resource.Layout.LoginActivity);
 
             // Create your application here
+            userNameInput = FindViewById<EditText>(Resource.Id.userNameInput);
+            passwordInput = FindViewById<EditText>(Resource.Id.passwordInput);
+            loginButton = FindViewById<Button>(Resource.Id.loginButton);
+            // add loginDetails
+            loginDetails.Add(new LoginDetails("smith", "sm123"));
+            loginDetails.Add(new LoginDetails("jack", "j66"));
+
+            loginButton.Click += delegate
+            {
+                foreach(LoginDetails l in loginDetails)
+                {
+                    if(userNameInput.Text.Equals(l.UserName) && passwordInput.Text.Equals(l.Password))
+                    {
+                        var intent = new Intent(this, typeof(Project1.MainActivity));
+                        StartActivity(intent);
+                        break;
+                    }
+                }
+            };
+
+        }
+
+        // Inner class/child class for loginDetails object
+        protected class LoginDetails
+        {
+            public string UserName { get; set; }
+            public string Password { get; set; }
+            public LoginDetails(string username, string password)
+            {
+                this.UserName = username;
+                this.Password = password;
+            }
         }
     }
 }

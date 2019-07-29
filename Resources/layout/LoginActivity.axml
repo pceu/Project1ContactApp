@@ -31,7 +31,8 @@
         android:orientation="vertical"
         android:gravity="center"
         android:layout_gravity="center"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="130dp">
 
         <EditText
             android:id="@+id/userNameInput"
@@ -69,7 +70,7 @@
         android:id="@+id/loginButton"
         android:layout_width="135dp"
         android:layout_height="45dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/rounded_button"
         android:text="Login"
         android:textColor="#ffffff"/>

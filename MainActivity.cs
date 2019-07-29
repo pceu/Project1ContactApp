@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Project1
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = false)]
     public class MainActivity : AppCompatActivity
     {
         //Create a list to store Contact Objects in this class
