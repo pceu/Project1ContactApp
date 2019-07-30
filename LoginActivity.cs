@@ -58,7 +58,7 @@ namespace Project1
                         });
                         alertDialog.Show();
                         // emptied username and password textfield
-                        userNameInput.Text = "";
+                        userNameInput.Text;
                         passwordInput.Text = "";
                     }
                 }
