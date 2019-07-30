@@ -34,15 +34,32 @@ namespace Project1
             loginDetails.Add(new LoginDetails("smith", "sm123"));
             loginDetails.Add(new LoginDetails("jack", "j66"));
 
+            // validate login details with hardcoded login details when loginButton is pressed
             loginButton.Click += delegate
             {
                 foreach(LoginDetails l in loginDetails)
                 {
+                    // if success, bring user to main page
                     if(userNameInput.Text.Equals(l.UserName) && passwordInput.Text.Equals(l.Password))
                     {
                         var intent = new Intent(this, typeof(Project1.MainActivity));
                         StartActivity(intent);
                         break;
+                    }
+                    else
+                    {
+                        // if the provided information is incorrect, then inform user that an invalid login details has been provided
+                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+                        alertDialog.SetTitle("Invalid Login");
+                        alertDialog.SetMessage("You have entered an invalid login details");
+                        alertDialog.SetNeutralButton("OK", delegate
+                        {
+                            alertDialog.Dispose();
+                        });
+                        alertDialog.Show();
+                        // emptied username and password textfield
+                        userNameInput.Text = "";
+                        passwordInput.Text = "";
                     }
                 }
             };
