@@ -68,9 +68,28 @@ namespace Project1
                 if (!String.IsNullOrEmpty(iPhoneNum))
                 {
                     Intent callIntent = new Intent(Intent.ActionCall);
-                    callIntent.SetData(Android.Net.Uri.Parse("tel: " + iPhoneNum));
+                    callIntent.SetData(Android.Net.Uri.Parse("tel:" + iPhoneNum));
                     StartActivity(callIntent);
                 }
+            };
+
+            messageButton.Click += delegate
+            {
+                string[] PermissionsLocation = { Manifest.Permission.SendSms };
+                RequestPermissions(PermissionsLocation, 0);
+                if (!String.IsNullOrEmpty(iPhoneNum))
+                {
+                    Intent messageIntent = new Intent(Intent.ActionView);
+                    messageIntent.SetData(Android.Net.Uri.Parse("tel:" + iPhoneNum));
+                    StartActivity(messageIntent);
+                }
+            };
+
+            emailButton.Click += delegate
+            {
+                Intent emailIntent = new Intent(Intent.ActionView);
+                emailIntent.SetData(Android.Net.Uri.Parse("mailto:" + iEmail));
+                StartActivity(emailIntent);
             };
 
 
