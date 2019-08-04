@@ -24,7 +24,7 @@ namespace Project1
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.LoginActivity);
+            SetContentView(Resource.Layout.activity_login);
 
             // Create your application here
             userNameInput = FindViewById<EditText>(Resource.Id.userNameInput);

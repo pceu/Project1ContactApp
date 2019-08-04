@@ -127,7 +127,7 @@
     <AndroidResource Include="Resources\drawable\ic_lock_white_24dp.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\LoginActivity.axml">
+    <AndroidResource Include="Resources\layout\activity_login.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -219,7 +219,7 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\person2.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout-land\LoginActivity.axml">
+    <AndroidResource Include="Resources\layout-land\activity_login.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -230,6 +230,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout-land\activity_create_new_contact.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout-large-port\activity_contact_details_page.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout-large-land\activity_contact_details_page.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout-large-port\activity_create_new_contact.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout-large-land\activity_create_new_contact.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
