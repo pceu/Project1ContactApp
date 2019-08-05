@@ -26,8 +26,8 @@
 
     <ImageView
         android:id="@+id/contactImage"
-        android:layout_width="158dp"
-        android:layout_height="158dp"
+        android:layout_width="193dp"
+        android:layout_height="187dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dp"
@@ -45,10 +45,10 @@
         android:id="@+id/detailsFullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/contactImage"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-8dp"
-        android:textSize="30sp"
+        android:layout_marginTop="280dp"
+        android:textSize="40sp"
         android:textStyle="bold" />
 
     <Button
@@ -56,54 +56,55 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="88dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="90dp"
+        android:layout_marginTop="356dp"
         android:background="@drawable/ic_call_24dp"
+        android:onClick="CallContact"
         app:layout_constraintBottom_toTopOf="@+id/callTextView"
         app:layout_constraintEnd_toStartOf="@+id/messageButton"
         app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13"
-        android:onClick="CallContact"/>
+        app:layout_constraintVertical_bias="0.13" />
 
     <Button
         android:id="@+id/messageButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
+        android:layout_alignTop="@+id/phoneCallButton"
         android:layout_marginEnd="15dp"
         android:background="@drawable/ic_message_24dp"
+        android:onClick="MessageContact"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.988"
-        android:onClick="MessageContact"/>
+        app:layout_constraintVertical_bias="0.988" />
 
     <Button
         android:id="@+id/emailButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/messageButton"
-        android:layout_marginBottom="203dp"
+        android:layout_alignStart="@+id/phoneCallButton"
+        android:layout_marginBottom="375dp"
         android:background="@drawable/ic_email_24dp"
+        android:onClick="EmailContact"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.794"
-        android:onClick="EmailContact"/>
+        app:layout_constraintHorizontal_bias="0.794" />
 
     <TextView
         android:id="@+id/callTextView"
-        android:layout_width="72dp"
-        android:layout_height="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/phoneCallButton"
-        android:text="Phone"
+        android:text="Phone:"
         android:textStyle="bold"
         android:textAlignment="textStart"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,28 +113,28 @@
 
     <TextView
         android:id="@+id/emailTextView"
-        android:layout_width="267dp"
-        android:layout_height="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/emailButton"
+        android:layout_alignTop="@+id/emailAddress"
         android:text="Email"
-        android:textStyle="bold"
         android:textAlignment="textStart"
-        android:textSize="20sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/callTextView" />
 
     <TextView
         android:id="@+id/companyTextView"
-        android:layout_width="280dp"
-        android:layout_height="39dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="131dp"
+        android:layout_marginBottom="245dp"
         android:text="Company"
-        android:textStyle="bold"
         android:textAlignment="textStart"
-        android:textSize="20sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailTextView"
@@ -141,37 +142,29 @@
 
     <TextView
         android:id="@+id/phoneNumber"
-        android:layout_width="228dp"
-        android:layout_height="42dp"
-        android:layout_below="@+id/callTextView"
-        android:layout_marginEnd="22dp"
-        android:layout_toStartOf="@+id/phoneCallButton"
-        android:textSize="20sp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/phoneCallButton"
+        android:layout_marginStart="104dp"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/emailAddress"
-        android:layout_width="265dp"
-        android:layout_height="48dp"
-        android:layout_alignEnd="@+id/companyTextView"
-        android:layout_below="@+id/emailTextView"
-        android:textSize="20sp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/detailsFullName"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="382dp"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/companyName"
-        android:layout_width="282dp"
-        android:layout_height="98dp"
-        android:layout_alignStart="@+id/phoneNumber"
-        android:layout_below="@+id/companyTextView"
-        android:layout_marginTop="-131dp"
-        android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/editButton"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/ic_edit_black_24dp"
-        android:onClick="GoToEditContact"/>
+        android:layout_width="401dp"
+        android:layout_height="108dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="126dp"
+        android:layout_toStartOf="@+id/messageButton"
+        android:textSize="30sp" />
 
 </RelativeLayout>

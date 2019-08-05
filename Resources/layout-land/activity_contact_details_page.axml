@@ -153,13 +153,4 @@
         android:layout_toEndOf="@+id/emailTextView"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/editButton"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/ic_edit_black_24dp"
-        android:onClick="GoToEditContact"/>
-
 </RelativeLayout>

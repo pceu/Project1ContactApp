@@ -5,8 +5,10 @@ using System.Text;
 using Android;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.Content;
 using Android.Views;
 using Android.Widget;
 
@@ -50,6 +52,7 @@ namespace Project1
             phoneNumber.Text = iPhoneNum;
             emailAddress.Text = iEmail;
             companyName.Text = iCompany;
+            // depending on which icon (person1 or 2) is choosed assign a drawable for the contact image
             if(iImage == 1)
             {
                 int resImage = (int)typeof(Resource.Drawable).GetField("person1").GetValue(null);
@@ -61,30 +64,55 @@ namespace Project1
                 contactImage.SetImageResource(resImage);
             }
 
+            // PHone Call Button
             phoneCallButton.Click += delegate
             {
-                string[] PermissionsLocation = { Manifest.Permission.CallPhone};
-                RequestPermissions(PermissionsLocation, 0);
-                if (!String.IsNullOrEmpty(iPhoneNum))
+                // check phone call permission and activate phone call if permitted
+                if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.CallPhone) == (int)Permission.Granted)
                 {
-                    Intent callIntent = new Intent(Intent.ActionCall);
-                    callIntent.SetData(Android.Net.Uri.Parse("tel:" + iPhoneNum));
-                    StartActivity(callIntent);
+                    if (!String.IsNullOrEmpty(iPhoneNum))
+                    {
+                        Intent callIntent = new Intent(Intent.ActionCall);
+                        callIntent.SetData(Android.Net.Uri.Parse("tel:" + iPhoneNum));
+                        StartActivity(callIntent);
+                    }
                 }
+                else // if not permitted, then ask for runtime permission
+                {                    
+                    string[] PermissionsLocation = { Manifest.Permission.CallPhone };
+                    RequestPermissions(PermissionsLocation, 0);
+                    // pop message to let user know to allow for permission
+                    var toast = Toast.MakeText(this, "Allow Phone call permission for this feature to work!", ToastLength.Long);
+                    toast.Show();
+                }
+                
             };
 
+            // Send Message Button
             messageButton.Click += delegate
             {
-                string[] PermissionsLocation = { Manifest.Permission.SendSms };
-                RequestPermissions(PermissionsLocation, 0);
-                if (!String.IsNullOrEmpty(iPhoneNum))
+                // check send sms permission and activate send sms if permitted
+                if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.CallPhone) == (int)Permission.Granted)
                 {
-                    Intent messageIntent = new Intent(Intent.ActionView);
-                    messageIntent.SetData(Android.Net.Uri.Parse("tel:" + iPhoneNum));
-                    StartActivity(messageIntent);
+                    if (!String.IsNullOrEmpty(iPhoneNum))
+                    {
+                        Intent messageIntent = new Intent(Intent.ActionView);
+                        messageIntent.SetData(Android.Net.Uri.Parse("tel:" + iPhoneNum));
+                        StartActivity(messageIntent);
+                    }
+                }
+                else // if not permitted, then ask for runtime permission
+                {
+                    string[] PermissionsLocation = { Manifest.Permission.SendSms };
+                    RequestPermissions(PermissionsLocation, 0);
+                    // pop message to let user know to allow for permission
+                    var toast = Toast.MakeText(this, "Allow Send SMS permission for this feature to work!", ToastLength.Long);
+                    toast.Show();
                 }
             };
 
+            // Send email Button
+            // open email and send email when email button is pressed
             emailButton.Click += delegate
             {
                 Intent emailIntent = new Intent(Intent.ActionView);

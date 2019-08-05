@@ -3589,8 +3589,8 @@ namespace Project1
 			// aapt resource value: 0x7f0a00af
 			public const int callTextView = 2131361967;
 			
-			// aapt resource value: 0x7f0a00ba
-			public const int cancelButton = 2131361978;
+			// aapt resource value: 0x7f0a00b9
+			public const int cancelButton = 2131361977;
 			
 			// aapt resource value: 0x7f0a004c
 			public const int center = 2131361868;
@@ -3628,23 +3628,23 @@ namespace Project1
 			// aapt resource value: 0x7f0a00ab
 			public const int contactDetailsBannerView = 2131361963;
 			
-			// aapt resource value: 0x7f0a00c3
-			public const int contactIcon1 = 2131361987;
+			// aapt resource value: 0x7f0a00c2
+			public const int contactIcon1 = 2131361986;
 			
-			// aapt resource value: 0x7f0a00c4
-			public const int contactIcon2 = 2131361988;
+			// aapt resource value: 0x7f0a00c3
+			public const int contactIcon2 = 2131361987;
 			
 			// aapt resource value: 0x7f0a00ac
 			public const int contactImage = 2131361964;
 			
+			// aapt resource value: 0x7f0a00ba
+			public const int contactName = 2131361978;
+			
 			// aapt resource value: 0x7f0a00bb
-			public const int contactName = 2131361979;
+			public const int contactNameInput = 2131361979;
 			
-			// aapt resource value: 0x7f0a00bc
-			public const int contactNameInput = 2131361980;
-			
-			// aapt resource value: 0x7f0a00c2
-			public const int contactPersonImage = 2131361986;
+			// aapt resource value: 0x7f0a00c1
+			public const int contactPersonImage = 2131361985;
 			
 			// aapt resource value: 0x7f0a00cb
 			public const int contactsListView = 2131361995;
@@ -3703,14 +3703,11 @@ namespace Project1
 			// aapt resource value: 0x7f0a0027
 			public const int disableHome = 2131361831;
 			
-			// aapt resource value: 0x7f0a00b7
-			public const int editButton = 2131361975;
-			
 			// aapt resource value: 0x7f0a009c
 			public const int edit_query = 2131361948;
 			
-			// aapt resource value: 0x7f0a00be
-			public const int email = 2131361982;
+			// aapt resource value: 0x7f0a00bd
+			public const int email = 2131361981;
 			
 			// aapt resource value: 0x7f0a00b5
 			public const int emailAddress = 2131361973;
@@ -3718,8 +3715,8 @@ namespace Project1
 			// aapt resource value: 0x7f0a00b1
 			public const int emailButton = 2131361969;
 			
-			// aapt resource value: 0x7f0a00bf
-			public const int emailInput = 2131361983;
+			// aapt resource value: 0x7f0a00be
+			public const int emailInput = 2131361982;
 			
 			// aapt resource value: 0x7f0a00b2
 			public const int emailTextView = 2131361970;
@@ -3910,8 +3907,8 @@ namespace Project1
 			// aapt resource value: 0x7f0a00b4
 			public const int phoneNumber = 2131361972;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int phoneNumberInput = 2131361981;
+			// aapt resource value: 0x7f0a00bc
+			public const int phoneNumberInput = 2131361980;
 			
 			// aapt resource value: 0x7f0a0058
 			public const int pin = 2131361880;
@@ -3928,6 +3925,9 @@ namespace Project1
 			// aapt resource value: 0x7f0a00c5
 			public const int radioGroup = 2131361989;
 			
+			// aapt resource value: 0x7f0a00c4
+			public const int radioGroup2 = 2131361988;
+			
 			// aapt resource value: 0x7f0a0055
 			public const int right = 2131361877;
 			
@@ -3937,8 +3937,8 @@ namespace Project1
 			// aapt resource value: 0x7f0a00e5
 			public const int right_side = 2131362021;
 			
-			// aapt resource value: 0x7f0a00b9
-			public const int saveButton = 2131361977;
+			// aapt resource value: 0x7f0a00b8
+			public const int saveButton = 2131361976;
 			
 			// aapt resource value: 0x7f0a000c
 			public const int save_image_matrix = 2131361804;
@@ -4150,11 +4150,11 @@ namespace Project1
 			// aapt resource value: 0x7f0a0009
 			public const int up = 2131361801;
 			
-			// aapt resource value: 0x7f0a00c0
-			public const int urCompany = 2131361984;
+			// aapt resource value: 0x7f0a00bf
+			public const int urCompany = 2131361983;
 			
-			// aapt resource value: 0x7f0a00c1
-			public const int urCompanyInput = 2131361985;
+			// aapt resource value: 0x7f0a00c0
+			public const int urCompanyInput = 2131361984;
 			
 			// aapt resource value: 0x7f0a002d
 			public const int useLogo = 2131361837;
@@ -4162,8 +4162,8 @@ namespace Project1
 			// aapt resource value: 0x7f0a00c7
 			public const int userNameInput = 2131361991;
 			
-			// aapt resource value: 0x7f0a00b8
-			public const int viewCreateNew = 2131361976;
+			// aapt resource value: 0x7f0a00b7
+			public const int viewCreateNew = 2131361975;
 			
 			// aapt resource value: 0x7f0a001b
 			public const int view_offset_helper = 2131361819;
