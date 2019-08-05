@@ -1,0 +1,25 @@
+Student ID: 217281975 | Name: Phiar Ceu Hnin | SIT313 Project 1
+
+add_icon.png, Nikin, https://pixabay.com/en/material-icon-plus-icon-add-symbol-2155448/, CCO Creative Commons
+
+background_image.jpg, Markus Spiske, https://www.pexels.com/photo/rain-raindrops-window-107583/, Pixels License (free to use for personal and commersial use)
+
+Child (person1.png), DavidRockDesign, https://pixabay.com/en/child-avatar-icon-flat-design-red-1837375/, CCO Creative Commons
+
+Avator (person2.png), DavidRockDesign, https://pixabay.com/en/avatar-icon-document-entrepreneur-1789663/, CCO Creative Commons
+
+The following are made by own or get them from android studio asset (free to use for commercial).
+Icons and images made using XML:
+ - gradient_view.xml
+ - ic_business_grey_24dp.xml
+ - ic_call_24dp.xml
+ - ic_email_24dp.xml
+ - ic_email_grey_24dp.xml
+ - ic_local_phone_grey_24dp.xml
+ - ic_lock_white_24dp.xml
+ - ic_message_24dp.xml
+ - ic_person_grey_24dp.xml
+ - ic_portrait_white_24dp.xml
+ - rounded_button.xml (own made)
+ - rounded_corner.xml (own made)
+ - square_eidt_text.xml (own made)

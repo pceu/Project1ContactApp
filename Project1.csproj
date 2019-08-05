@@ -168,9 +168,6 @@
     <AndroidResource Include="Resources\drawable\ic_email_24dp.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_edit_black_24dp.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_person_grey_24dp.xml" />
   </ItemGroup>
   <ItemGroup>
