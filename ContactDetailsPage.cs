@@ -18,7 +18,7 @@ namespace Project1
     public class ContactDetailsPage : Activity
     {
         ImageView contactImage;
-        TextView detailsFullName, phoneNumber, emailAddress, companyName, editButton;
+        TextView detailsFullName, phoneNumber, emailAddress, companyName;
         Button phoneCallButton, messageButton, emailButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -35,7 +35,6 @@ namespace Project1
             phoneNumber = FindViewById<TextView>(Resource.Id.phoneNumber);
             emailAddress = FindViewById<TextView>(Resource.Id.emailAddress);
             companyName = FindViewById<TextView>(Resource.Id.companyName);
-            editButton = FindViewById<TextView>(Resource.Id.editButton);
             phoneCallButton = FindViewById<Button>(Resource.Id.phoneCallButton);
             messageButton = FindViewById<Button>(Resource.Id.messageButton);
             emailButton = FindViewById<Button>(Resource.Id.emailButton);
