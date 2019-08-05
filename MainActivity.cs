@@ -27,10 +27,10 @@ namespace Project1
             myListView = FindViewById<ListView>(Resource.Id.contactsListView);
             addNewContact = FindViewById<Button>(Resource.Id.addNewContact);
 
-            // create Contact object/s
+            // create Contact object/s if there is no Contact object in ContactData list
             if(ContactData.Count < 1) { populateContact(); }
 
-            //click event for addNewContact
+            //click event for addNewContact - bring user to Create New Contact page/activity
             addNewContact.Click += (sender, e) =>
             {
                 Intent intent = new Intent(this, typeof(Project1.CreateNewContact));
@@ -46,8 +46,11 @@ namespace Project1
             myListView.ItemClick += MyListView_ItemClick;
         }
 
+        // when listView is clicked, bring user to Contact Details Page
+        //pass data to contact details page and display them
         private void MyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
+            // transport data to contact details using intent
             var intent = new Intent(this, typeof(Project1.ContactDetailsPage));
             intent.PutExtra("name", ContactData[e.Position].Name);
             intent.PutExtra("phoneNum", ContactData[e.Position].PhoneNum);

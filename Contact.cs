@@ -12,6 +12,7 @@ using Android.Widget;
 
 namespace Project1
 {
+    // Class for creating Contact object which a list of this objects will be displayed in the main page within a custom list view
     public class Contact
     {
         // class attributes

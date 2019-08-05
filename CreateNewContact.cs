@@ -45,8 +45,10 @@ namespace Project1
             person1 = FindViewById<RadioButton>(Resource.Id.contactIcon1);
             person2 = FindViewById<RadioButton>(Resource.Id.contactIcon2);
 
+            // save button ( save and add the newly created Contact object to the Contact List in main page
             saveButton.Click += delegate
             {
+                // validate text entered first (such as email, phone) and create the new Contact only validation is successed
                 if (validateData())
                 {
                     Intent intent = new Intent(this, typeof(Project1.MainActivity));
@@ -61,6 +63,7 @@ namespace Project1
                 }
                 else
                 {
+                    // show alert message to user what did they do wrong
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
                     alertDialog.SetTitle("Opps!");
                     alertDialog.SetMessage(errorMessage);
@@ -72,6 +75,7 @@ namespace Project1
                 }
             };
 
+            // Cancel Button - bring user to main page again without adding or creating any Contact object to the list
             cancelButton.Click += delegate
             {
                 Intent intent = new Intent(this, typeof(Project1.MainActivity));
@@ -96,6 +100,7 @@ namespace Project1
             }
         }
 
+        // data validation for name, phone number, email and so on
         public bool validateData()
         {
             bool result;

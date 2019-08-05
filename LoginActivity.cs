@@ -15,7 +15,9 @@ namespace Project1
     [Activity(Label = "LoginActivity", MainLauncher = true)]
     public class LoginActivity : Activity
     {
+        // a list of LoginDetails object/s (username & password) to contain hardcoded login credentials
         List<LoginDetails> loginDetails = new List<LoginDetails>();
+
         Button loginButton;
         EditText userNameInput;
         EditText passwordInput;
@@ -30,16 +32,18 @@ namespace Project1
             userNameInput = FindViewById<EditText>(Resource.Id.userNameInput);
             passwordInput = FindViewById<EditText>(Resource.Id.passwordInput);
             loginButton = FindViewById<Button>(Resource.Id.loginButton);
-            // add loginDetails
+
+            // add hardcoded loginDetails
             loginDetails.Add(new LoginDetails("smith", "sm123"));
             loginDetails.Add(new LoginDetails("jack", "j66"));
 
             // validate login details with hardcoded login details when loginButton is pressed
             loginButton.Click += delegate
             {
+                // compare the provided login credentials (username & password) with each credential in the loginDetails List
                 foreach(LoginDetails l in loginDetails)
                 {
-                    // if success, bring user to main page
+                    // if success (match username and password), bring user to main page
                     if(userNameInput.Text.Equals(l.UserName) && passwordInput.Text.Equals(l.Password))
                     {
                         var intent = new Intent(this, typeof(Project1.MainActivity));
@@ -66,7 +70,7 @@ namespace Project1
 
         }
 
-        // Inner class/child class for loginDetails object
+        // Inner class/child class for loginDetails list
         protected class LoginDetails
         {
             public string UserName { get; set; }
