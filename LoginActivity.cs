@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Project1
 {
-    [Activity(Label = "LoginActivity", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", MainLauncher = true)]
     public class LoginActivity : Activity
     {
         // a list of LoginDetails object/s (username & password) to contain hardcoded login credentials
