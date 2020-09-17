@@ -1,4 +1,4 @@
-# Project: Contact App (Project1)
+# Project: Contact App
 
 Functionality/Feature
  - login: User must successfully login in order to access the main page (where contact lists are displayed). Due to limited duration and the scope covered in this project, 
